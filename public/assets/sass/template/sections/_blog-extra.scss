@@ -1,0 +1,243 @@
+/* Blog Card ---------------------------------- */
+.blog-card {
+    border-radius: 0px;
+    background-color: transparent;
+    .box-title {
+        margin-top: 13px;
+        margin-bottom: -0.25em;
+        font-size: 24px;
+        font-weight: 700;
+        max-width: 386px;
+        a {
+            background-image: linear-gradient(to left, $theme-color, $theme-color);
+            background-repeat: no-repeat;
+            background-position: bottom left;
+            background-size: 0 2px;
+            transition: 0.5s ease-in-out;
+            &:hover {
+                background-size: 100% 2px;
+            }
+        }
+    }
+    .blog-img {
+        overflow: hidden;
+        border-radius: 10px;
+        position: relative;
+        img {
+            width: 100%;
+            transition: 0.4s ease-in-out;
+            height: 326px;
+            object-fit: cover;
+        }
+    }
+    .blog-content {
+        transition: 0.4s;
+        position: relative;
+        z-index: 0;
+        border: 0;
+        padding-top: 30px;
+        .blog-date {
+            display: inline-block;
+            border-radius: 8px 0 8px 0;
+            background: $title-color;
+            color: $white-color;
+            text-align: center;
+            font-size: 14px;
+            padding: 0px 10px 2px;
+            position: absolute;
+            right: 20px;
+            overflow: hidden;
+            top: 0;
+            transform: translate(0, -45px);
+            span {
+                background: $white-color;
+                display: block;
+                width: calc(100% + 20px);
+                color: $theme-color;
+                font-size: 24px;
+                font-weight: 700;
+                font-family: $title-font;
+                padding-bottom: 9px;
+                margin-bottom: 1px;
+                margin-left: -10px;
+                padding-top: 10px;
+            }
+        }
+    }
+    .blog-category {
+        font-size: 14px;
+        font-weight: 400;
+        border: 1px solid $theme-color;
+        border-radius: 30px;
+        display: inline-block;
+        padding: 2px 14px;
+        color: $title-color;
+        &:hover {
+            background: $theme-color;
+            color: $white-color;
+        }
+    }
+    .link-btn {
+        color: $title-color;
+        &:before {
+            background-color: $theme-color;
+        }
+        &:hover {
+            color: $theme-color;
+        }
+    }
+    &:hover {
+        .blog-img {
+            img {
+                transform: scale(1.08);
+            }
+            .icon-btn {
+                opacity: 1;
+            }
+            &:after {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+@include ml {
+    .blog-card .box-title {
+        font-size: 20px;
+    }
+}
+/* Blog Card 2---------------------------------- */
+.blog-slider2 {
+    border: 1px solid rgba(196, 207, 222, 0.2);
+    border-radius: 10px;
+    padding: 30px;
+    @include vxs {
+        padding: 20px 20px 30px;
+    } 
+}
+.blog-card.style2 {
+    background: transparent;
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        right: -30px;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        background: rgba(196, 207, 222, 0.2);
+    }
+    .blog-img img {
+        height: 217px;
+    }
+    .blog-content {
+        padding-top: 28px;
+        margin-bottom: -0.3em;
+        .blog-meta {
+            margin-top: -0.3em;
+            margin-bottom: 15px;
+            background: transparent;
+        }
+        .box-title {
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+        .link-btn {
+            i {
+                color: $theme-color;
+            }
+        }
+    }
+}
+/* Blog Card 3---------------------------------- */
+.blog-card.style3 {
+    .blog-img {
+        margin-bottom: -30px;
+        border-radius: 0;
+    }
+    .blog-content {
+        border-top: 1px solid $border-color2;
+        background: $white-color;
+        position: relative;
+        z-index: 1;
+        margin: 0 15px;
+        padding: 30px 30px 23px;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+        .blog-meta {
+            margin-top: -0.4em;
+            margin-bottom: 8px;
+            background: transparent;
+            span, a {
+                color: $title-color;
+            }
+        }
+        .box-title {
+            margin-top: 0px;
+            margin-bottom: 14px;
+        }
+        .blog-text {
+            margin-bottom: 15px;
+        }
+        .link-btn {
+            align-items: center;
+        }
+    }
+    @include vxs {
+        .blog-img {
+            margin: 0;
+        }
+        .blog-content {
+            padding-top: 30px;
+        }
+    }
+}
+
+/* Blog Card 4---------------------------------- */
+.blog-card.style4 {
+    margin-top: 42px;
+    border: 1px solid $border-color2;
+    position: relative;
+    .blog-img {
+        transform: translate(0, -42px);
+        margin-right: 60px;
+        margin-bottom: -12px;
+    }
+    .blog-date {
+        position: absolute;
+        right: -10px;
+        top: 100px;
+        transform: rotate(-90deg) translate(0, 100%);
+        font-size: 18px;
+        font-weight: 600;
+        i {
+            color: $theme-color;
+            margin-right: 2px;
+        }
+    }
+    .blog-meta .author img {
+        border: 1px solid $theme-color;
+    }
+    .blog-content {
+        background-size: auto;
+        background-position: bottom right;
+        border: 0;
+    }
+}
+@include vxs {
+    .blog-card.style4 .blog-content {
+        padding: 0px 20px 30px;
+    }
+    .blog-card.style4 .blog-date {
+        top: 80px;
+    }
+    .blog-card.style4 {
+        .blog-meta span, .blog-meta a {
+            margin-right: 15px;
+        }
+        .blog-meta span:after, .blog-meta a:after {
+            margin-left: 15px;
+        }
+        .blog-meta span:last-child, .blog-meta a:last-child {
+            margin-right: 0;
+        }
+    }
+}

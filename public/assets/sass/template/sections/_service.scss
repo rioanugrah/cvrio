@@ -1,0 +1,56 @@
+/* Service Area 1 ---------------------------------- */
+.service1-tab-wrap {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+        border-top: 1px solid $border-color;
+        &:last-child {
+            border-bottom: 1px solid $border-color;
+        }
+    }
+}
+.service1-tab-item {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+    padding: 30px 0;
+    .service-tab-icon {
+        flex: none;
+        height: 60px;
+        width: 60px;
+        line-height: 60px;
+        border-radius: 50%;
+        position: relative;
+        text-align: center;
+        &:after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: $theme-color;
+            opacity: 0.15;
+            border-radius: 50%;
+        }
+    }
+    .service-tab-title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        margin-top: -0.3em;
+    }
+    .service-tab-text {
+        font-size: 18px;
+        margin-bottom: -0.3em;
+        line-height: 1.555;
+    }
+    .service-tab-icon-btn {
+        margin-left: auto;
+    }
+    @include xs {
+        flex-wrap: wrap;
+        gap: 25px 38px;
+        .service-tab-icon-btn {
+            margin-left: 0;
+        }
+    }
+}

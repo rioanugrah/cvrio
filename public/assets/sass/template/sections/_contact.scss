@@ -1,0 +1,87 @@
+
+/* Contact Page ---------------------------------- */ 
+.contact-info-wrap {
+    margin-top: -40px;
+    .about-contact-grid .about-contact-icon {
+        width: 46px;
+        height: 46px;
+        img {
+            width: 30px;
+        }
+    }
+}
+.contact-form-v1 {
+    padding: 60px;
+    border-radius: 10px;
+    input {
+        height: 60px;
+    }
+    input,
+    textarea {
+        color: $light-color !important;
+        &::placeholder {
+            color: $light-color !important;
+        }
+    }
+    textarea {
+        height: 183px;
+    }
+    button.th-btn.w-100 {
+        padding: 23px 30px;
+    }
+    @include lg {
+        margin-right: 0;
+        margin-top: 50px;
+    }
+    @include sm {
+        padding: 40px;
+    }
+    @include xs {
+        padding: 30px;
+    }
+}
+.contact-map {
+    line-height: 0px;
+    max-width: 1520px;
+    margin: 0 auto;
+    iframe {
+        width: 100%;
+        height: 377px;
+        border-radius: 10px;
+        @include lg {
+            height: 400px;
+        }
+        @include md {
+            height: 350px;
+        }
+    }
+    &.style2 {
+        max-width: none;
+        width: 100%;
+        iframe {
+            height: 450px;
+            border-radius: 0;
+            @include lg {
+                height: 400px;
+            }
+            @include md {
+                height: 350px;
+            }
+        }
+    }
+}
+
+/* Contact 2 ---------------------------------- */ 
+.contact-form-v2 {
+    textarea.form-control, textarea {
+        min-height: 120px;
+    }
+}
+.contact-info-wrap2 {
+    .info-box {
+        margin-bottom: 30px;
+        &:last-child {
+            margin-bottom: -0.4em;
+        }
+    }
+}

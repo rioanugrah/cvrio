@@ -1,0 +1,119 @@
+/* Pricing Card ---------------------------------- */
+.price-card {
+    position: relative;
+    z-index: 2;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    background: $white-color;
+    padding: 40px;
+    .price-card-title {
+        margin-bottom: 11px;
+        margin-top: -0.25em;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .price-card_price {
+        font-size: 44px;
+        font-weight: 800;
+        border-bottom: 1px solid $light-color;
+        padding-bottom: 22px;
+        margin-bottom: 35px;
+        color: $theme-color;
+        .duration {
+            font-size: 20px;
+            font-weight: 400;
+            font-family: $body-font;
+            color: $body-color;
+        }
+    }
+    .price-card_content {
+        .checklist {
+            li {
+                font-weight: 400;
+                &:not(:last-child) {
+                    margin-bottom: 15px;
+                }
+                i {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+    .th-btn {
+        margin-top: 35px;
+        padding: 21px 20px;
+    }
+    &.active {
+        background: $theme-color;
+        .checklist li > i,
+        .checklist li,
+        .price-card_price .duration,
+        .price-card_price, 
+        .price-card-title {
+            color: $white-color;
+            opacity: 1;
+        }
+        .th-btn {
+            background: $title-color;
+        }
+    }
+}
+@include xl {
+    .price-card .price-card_text {
+        font-size: 16px;
+    }
+}
+@include lg {
+    .price-card {
+        padding: 30px;
+    }
+    .price-card .price-card_price {
+        font-size: 40px;
+    }
+}
+@include md {
+    .price-card {
+        padding: 40px;
+    }
+}
+@include vxs {
+    .price-card {
+        padding: 30px;
+    }
+}
+
+/* Pricing Card 2---------------------------------- */
+.price-card.style2 {
+    border: 1px solid $light-color;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+    &:after,
+    &:before {
+        content: '';
+        position: absolute;
+        height: 25px;
+        width: 25px;
+        border: 1px solid rgba($color: #212428, $alpha: 0.6);
+        border-width: 1px 0 0 1px;
+        top: 0;
+        left: 0;
+    }
+    &:before {
+        bottom: 0;
+        right: 0;
+        left: auto;
+        top: auto;
+        border-width: 0 1px 1px 0;
+    }
+    .price-card_price .duration {
+        font-size: 18px;
+    }
+    .th-btn {
+        border-radius: 0;
+        &:hover {
+            background: $theme-color;
+            color: $white-color;
+        }
+    }
+}

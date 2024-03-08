@@ -1,0 +1,395 @@
+/* About 1 ---------------------------------- */
+.img-box1 {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    .img1 {
+        display: inline-block;
+        position: relative;
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            background: $theme-color;
+            z-index: -1;
+            inset: 175px 0px 0px -30px;
+            mask-image: url(../img/shape/about-bg-mask-1.svg);
+            mask-size: 100% 100%;
+            mask-position: 0px 5px;
+        }
+        &:before {
+            background: transparent;
+            border: 3px solid $theme-color;
+            inset: 165px -20px -20px 45px;
+            mask-image: none;
+            border-radius: 0 0 0 52%;
+
+        }
+    }
+    .year-counter {
+        position: absolute;
+        right: 0;
+        top: 50%;
+    }
+    @include xs { 
+        .img1 {
+            padding: 0 0px 0 30px;
+        }
+        .img1:after {
+            inset: 175px 0px 0px 0;
+            mask-position: 0;
+        }
+        .img1:before {
+            inset: 155px 0 -20px 45px;
+        }
+    }
+    @include vxs {
+        .img1:after {
+            inset: 175px 10px 0px 0;
+        }
+    }
+    @media (max-width: 320px) {
+        .img1:after {
+            inset: 150px -30px 0px -30px;
+        }
+        .img1:before {
+            inset: 135px 0 -20px 45px;
+        }
+    }
+}
+.year-counter {
+    width: 274px;
+    padding: 8px;
+    border-radius: 100px;
+    background-color: $smoke-color;
+    position: relative;
+    text-align: left;
+    z-index: 3;
+    display: flex;
+    gap: 27px;
+    align-items: center;
+    &_number {
+        font-family: $title-font;
+        font-size: 44px;
+        font-weight: 800;
+        color: $white-color;
+        margin-bottom: 0;
+        background: $theme-color;
+        height: 86px;
+        width: 89px;
+        text-align: center;
+        line-height: 86px;
+        padding: 0;
+        border-radius: 50%;
+        flex: none;
+    }
+    &_text {
+        font-family: $body-font;
+        color: $title-color;
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: 400;
+        margin-bottom: -0.32em;
+        text-transform: uppercase;
+        max-width: 113px;
+        display: inline-block;
+    }
+    @include sm {
+        .year-counter_number {
+            font-size: 64px;
+        }
+    }
+}
+.about-tab-1 {
+    .filter-menu-active {
+        display: inline-flex;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+    .th-btn {
+        font-size: 16px;
+        font-weight: 400;
+        font-family: $body-color;
+        color: $title-color;
+        text-transform: capitalize;
+        border: 1px solid $smoke-color;
+        background: transparent;
+        padding: 2px 14px;
+        min-width: auto;
+        &:hover,
+        &.active {
+            background: $theme-color;
+            color: $white-color;
+        }
+    }
+}
+.about-tab-wrap {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 48px;
+}
+.about-tab-card {
+    background: $white-color;
+    border-radius: 10px;
+    padding: 30px 25px;
+    position: relative;
+    margin: 10px;
+    width: 50%;
+    flex: 1;
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        background: $smoke-color;
+        inset: -10px;
+        border-radius: 10px;
+        z-index: -2;
+        transition: 0.4s;
+    }
+    &:before {
+        inset: -10px -10px -10px 123px;
+        background: $theme-color;
+        opacity: 0.1;
+        z-index: -1;
+        border-radius: 0 10px 10px 0;
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 33px 100%);
+    }
+
+    .about-tab-card-subtitle {
+        font-size: 16px;
+        font-weight: 400;
+        color: $theme-color;
+        margin-bottom: 7px;
+        display: block;
+        margin-top: -0.3em;
+    }
+    .about-tab-card-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: $title-color;
+        margin-bottom: 12px;
+        a {
+            color: $title-color;
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    }
+    .about-tab-card-text {
+        margin-bottom: -0.5em;
+        font-size: 16px;
+        font-weight: 400;
+        color: $title-color;
+        font-family: $body-font;
+    }
+    &:hover {
+        &:before {
+            opacity: 1;
+        }
+    }
+}
+/* About 2 ---------------------------------- */
+.img-box2 {
+    position: relative;
+    display: inline-block;
+    padding: 40px 0 40px 72px;
+    &:after {
+        content: '';
+        position: absolute;
+        left: 48px;
+        top: 0;
+        bottom: 0;
+        border: 21px solid $theme-color;
+        width: 130px;
+        z-index: -1;
+    }
+    .apps-icon {
+        position: absolute;
+        &.icon1 {
+            left: 135px;
+            bottom: 220px;
+        }
+        &.icon2 {
+            top: 140px;
+            right: 100px;
+        }
+        &.icon3 {
+            bottom: 130px;
+            right: 80px;
+        }
+    }
+    @include xs {
+        .apps-icon.icon1 {
+            left: 75px;
+        }
+        .apps-icon.icon2 {
+            top: 100px;
+            right: 40px;
+        }
+    }
+    @include vxs {
+        padding: 40px 0 40px 40px;
+        &:after {
+            left: 20px;
+            border: 20px solid $theme-color;
+        }
+    }
+}
+.year-counter2 {
+    background: $title-dark;
+    display: inline-flex;
+    border-radius: 5px;
+    padding: 20px;
+    gap: 23px;
+    align-items: center;
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    .year-counter-icon {
+        flex: none;
+    }
+    .year-counter-details {
+        margin-bottom: -0.5em;
+    }
+    .year-counter_number {
+        background: transparent;
+        width: auto;
+        height: auto;
+        line-height: normal;
+        text-align: left;
+        font-size: 30px;
+        font-weight: 800;
+        color: $theme-color;
+        margin-bottom: 2px;
+        margin-top: -0.3em;
+    }
+    .year-counter_text {
+        max-width: none;
+        font-size: 18px;
+        text-transform: capitalize;
+    }
+    @include vxs {
+        bottom: 0;
+    }
+}
+.about-contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    .about-contact-icon {
+        flex: none;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 6px;
+        background: $title-dark;
+        text-align: center;
+    }
+    .about-contact-details-text {
+        font-size: 14px;
+        margin-bottom: 2px;
+        margin-top: -0.3em;
+    }
+    .about-contact-details-title {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: -0.3em;
+        &:hover {
+            color: $theme-color;
+        }
+        a {
+            color: inherit;
+        }
+    }
+}
+/* About 3 ---------------------------------- */
+.img-box3 {
+    position: relative;
+    display: inline-block;
+    padding-left: 180px;
+    @include xl {
+        padding-left: 60px;
+    }
+    @include xs {
+        padding-left: 0;
+    }
+    .img1 {
+        position: relative;
+        padding: 20px 0 20px 20px;
+        @include sm {
+            padding: 20px;
+        }
+        &:after,
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 2px solid $theme-color;
+            border-width: 2px 0 0 2px;
+            height: 90px;
+            width: 90px;
+        }
+        &:before {
+            bottom: 0;
+            right: -20px;
+            top: auto;
+            left: auto;
+            border-width: 0 2px 2px 0;
+            @include sm {
+                right: 0;
+            }
+        }
+    }
+    .img2 {
+        position: absolute;
+        left: 0;
+        top: 30%;
+        @include xs {
+            position: relative;
+            left: 0;
+            top: 0;
+            animation: none;
+            margin-top: 30px;
+        }
+    }
+}
+.img-box3-2 {
+    position: relative;
+    display: inline-block;
+    margin: 0 15px 15px 0;
+    &:after {
+        content: '';
+        position: absolute;
+        inset: 0 -15px -15px 15px;
+        background: transparent;
+        border: 2px solid $theme-color;
+        z-index: -1;
+    }
+}
+.about-counter-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+.about-counter-wrap {
+    max-width: 150px;
+    .counter-title {
+        font-size: 30px;
+        font-weight: 700;
+        color: $theme-color;
+        margin-top: -0.25em;
+    }
+    .counter-text {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: -0.3em;
+        line-height: 1.3888;
+    }
+}

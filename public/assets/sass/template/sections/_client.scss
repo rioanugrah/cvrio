@@ -1,0 +1,85 @@
+/* Client Card -------------------------------------*/
+.client-area-1 {
+    position: relative;
+    z-index: 1;
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        width: 308px;
+        height: 308px;
+        border-radius: 50%;
+        background: $theme-color;
+        opacity: 0.6;
+        filter: blur(202.5px);
+        top: 50%;
+        z-index: -1;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+    &:before {
+        right: 0;
+        left: auto;
+        transform: translate(50%, -50%);
+    }
+}
+.client-card {
+    text-align: center;
+    padding: 20px 0;
+    display: block;
+    background: $body-color;
+    border-radius: 10px;
+    &-title {
+        font-size: 18px;
+        font-weight: 400;
+        font-family: $body-font;
+        color: $light-color;
+        text-transform: uppercase;
+        margin-top: 20px;
+        margin-bottom: 0;
+        transition: 0.4s;
+    }
+    &:hover {
+        .client-card-title {
+            color: $theme-color;
+        }
+    }
+}
+
+/* Client Area 2 -------------------------------------*/
+.client-area-2 {
+    padding: 65px 0 75px;
+    .client-title {
+        font-size: 18px;
+        font-weight: 400;
+        font-family: $title-font;
+        color: $white-color;
+        position: relative;
+        display: inline-flex;
+        gap: 30px;
+        align-items: center;
+        &:before,
+        &:after {
+            content: '';
+            position: relative;
+            display: inline-block;
+            width: 125px;
+            height: 1px;
+            border: 1px dashed $white-color;
+            @include md {
+                display: none;
+            }
+        }
+    }
+}
+.client-card2 {
+    filter: grayscale(1);
+    text-align: center;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+        filter: none;
+    }
+}

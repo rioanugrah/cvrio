@@ -1,0 +1,95 @@
+.breadcumb-menu {
+    max-width: 100%;
+    padding: 0;
+    margin: 35px 0 -0.5em 0;
+    list-style-type: none;
+    position: relative;
+    li {
+        display: inline-block;
+        margin-right: 3px;
+        padding-right: 3px;
+        list-style: none;
+        position: relative;
+
+        &:after {
+            content: "\f101";
+            position: relative;
+            margin-left: 6px;
+            font-weight: 500;
+            font-size: 15px;
+            color: inherit;
+            font-family: $icon-font;
+        }
+
+        &:last-child {
+            padding-right: 0;
+            margin-right: 0;
+            color: $theme-color;
+
+            &:after {
+                display: none;
+            }
+        }
+    }
+
+    li,
+    a,
+    span {
+        white-space: normal;
+        color: inherit;
+        word-break: break-word;
+        font-weight: 400;
+        font-size: 18px;
+        color: $white-color;
+    }
+}
+
+.breadcumb-title {
+    margin: -0.20em 0 -0.18em 0;
+	line-height: 1.1;
+    font-weight: 800;
+    color: $white-color;
+}
+
+.breadcumb-wrapper {
+    background-color: $gray-color;
+    padding: 245px 0 168px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    &:after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: $body-background;
+        opacity: 0.8;
+        z-index: -1;
+    }
+}
+
+@include lg {
+    .breadcumb-wrapper {
+        padding: 184px 0 120px;
+    }
+	.breadcumb-menu {
+        margin: 25px 0 -0.5em 0;
+        li,
+        a,
+        span {
+            font-size: 16px;
+        }
+    }
+}
+
+@include md {
+    .breadcumb-wrapper {
+        padding: 164px 0 100px;
+    }
+}
+@include xs {
+    
+	.breadcumb-title {
+		font-size: 34px;
+	}
+}
