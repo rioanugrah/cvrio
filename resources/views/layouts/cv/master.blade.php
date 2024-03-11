@@ -25,6 +25,14 @@
     <link rel="stylesheet" href="{{ $asset }}/css/magnific-popup.min.css">
     <link rel="stylesheet" href="{{ $asset }}/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="{{ $asset }}/css/style.css">
+    <style>
+        svg{
+        width: 100px;
+        height: 100px;
+        /* margin: 20px; */
+        display:inline-block;
+        }
+    </style>
 </head>
 
 <body>
@@ -775,30 +783,34 @@
 Contact Area
 ==============================-->
                     <div class="contact-form-v1 bg-title">
-                        <form action="mail.php" method="POST" class="contact-form ajax-contact">
+                        <form method="POST" class="contact-form send-mail" enctype="multipart/form-data">
+                            @csrf
                             <div class="row gx-30">
                                 <div class="form-group col-md-6 style-border">
                                     <label for="name">Your Name:</label>
                                     <input type="text" class="form-control" name="name" id="name"
-                                        placeholder="Name :">
+                                        placeholder="Name :" required>
                                 </div>
                                 <div class="form-group col-md-6 style-border">
                                     <label for="email">Your Email:</label>
                                     <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Email :">
+                                        placeholder="Email :" required>
                                 </div>
                                 <div class="form-group col-md-12 style-border">
                                     <label for="subject">Your Question:</label>
                                     <input type="text" class="form-control" name="subject" id="subject"
-                                        placeholder="Subject :">
+                                        placeholder="Subject :" required>
                                 </div>
                                 <div class="form-group col-12 style-border">
                                     <label for="subject">Your Comment:</label>
                                     <textarea name="message" id="message" cols="30" rows="3" class="form-control"
-                                        placeholder="Message :"></textarea>
+                                        placeholder="Message :" required></textarea>
                                 </div>
                                 <div class="form-btn col-12">
-                                    <button class="th-btn w-100">Send Message</button>
+                                    <button class="th-btn w-100" type="submit">
+                                        <div>Send Message</div>
+                                    </button>
+                                    <div id="loadingBtn"></div>
                                 </div>
                             </div>
                             <p class="form-messages mb-0 mt-3"></p>
@@ -925,6 +937,53 @@ Contact Area
 
     <!-- Main Js File -->
     <script src="{{ $asset }}/js/main.js"></script>
+
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $('.send-mail').submit(function(e) {
+            // alert('coba');
+            e.preventDefault();
+            let formData = new FormData(this);
+            // $('#image-input-error').text('');
+            $.ajax({
+                type:'POST',
+                url: "{{ route('send-mail') }}",
+                data: formData,
+                contentType: false,
+                processData: false,
+                beforeSend: function() {
+                    document.getElementById('loadingBtn').innerHTML = '<svg version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"'+
+                                            'viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">'+
+                                            '<circle fill="#fff" stroke="none" cx="6" cy="50" r="6">'+
+                                                '<animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.1"/>'+
+                                            '</circle>'+
+                                            '<circle fill="#fff" stroke="none" cx="26" cy="50" r="6">'+
+                                                '<animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.2"/>'+
+                                            '</circle>'+
+                                            '<circle fill="#fff" stroke="none" cx="46" cy="50" r="6">'+
+                                                '<animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.3"/>'+
+                                            '</circle>'+
+                                        '</svg>';
+                },
+                success: (result) => {
+                    if(result.success != false){
+                        alert(result.message_content);
+                    }else{
+                        alert(result.message_content);
+                        document.getElementById('loadingBtn').style.display = 'none';
+                    }
+                },
+                error: function (request, status, error) {
+                    alert(error);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
