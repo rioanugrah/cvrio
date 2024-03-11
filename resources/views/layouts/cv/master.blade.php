@@ -25,14 +25,6 @@
     <link rel="stylesheet" href="{{ $asset }}/css/magnific-popup.min.css">
     <link rel="stylesheet" href="{{ $asset }}/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="{{ $asset }}/css/style.css">
-    <style>
-        svg{
-        width: 100px;
-        height: 100px;
-        /* margin: 20px; */
-        display:inline-block;
-        }
-    </style>
 </head>
 
 <body>
@@ -807,10 +799,7 @@ Contact Area
                                         placeholder="Message :" required></textarea>
                                 </div>
                                 <div class="form-btn col-12">
-                                    <button class="th-btn w-100" type="submit">
-                                        <div>Send Message</div>
-                                    </button>
-                                    <div id="loadingBtn"></div>
+                                    <button class="th-btn w-100" type="submit">Send Message</button>
                                 </div>
                             </div>
                             <p class="form-messages mb-0 mt-3"></p>
@@ -956,26 +945,11 @@ Contact Area
                 data: formData,
                 contentType: false,
                 processData: false,
-                beforeSend: function() {
-                    document.getElementById('loadingBtn').innerHTML = '<svg version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"'+
-                                            'viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">'+
-                                            '<circle fill="#fff" stroke="none" cx="6" cy="50" r="6">'+
-                                                '<animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.1"/>'+
-                                            '</circle>'+
-                                            '<circle fill="#fff" stroke="none" cx="26" cy="50" r="6">'+
-                                                '<animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.2"/>'+
-                                            '</circle>'+
-                                            '<circle fill="#fff" stroke="none" cx="46" cy="50" r="6">'+
-                                                '<animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.3"/>'+
-                                            '</circle>'+
-                                        '</svg>';
-                },
                 success: (result) => {
                     if(result.success != false){
                         alert(result.message_content);
                     }else{
                         alert(result.message_content);
-                        document.getElementById('loadingBtn').style.display = 'none';
                     }
                 },
                 error: function (request, status, error) {
