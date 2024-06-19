@@ -647,8 +647,8 @@
             <div class="row align-items-center gx-70 gy-40">
                 <div class="col-xl-6">
                     <div class="title-area">
-                        <span class="sub-title2 text-white">Award</span>
-                        <h2 class="sec-title">Award & Recognitions</h2>
+                        <span class="sub-title2 text-white">Certificate</span>
+                        <h2 class="sec-title">Certificate or Award</h2>
                         {{-- <p class="sec-text me-xxl-5">UI/UX design focuses on creating intuitive and aesthetically
                             pleasing user interfaces and experiences. It's crucial for retention businesses as it
                             enhances user </p> --}}
@@ -661,8 +661,17 @@
                     <ul class="award-list-wrap">
                         <li class="award-single-list">
                             <div class="award-title-wrap">
-                                <h4 class="box-title ">Coming Soon</h4>
-                                {{-- <p class="award-single-list-text">Winner 2023</p> --}}
+                                <h4 class="box-title ">Best Practice Setup Moodle & Server Ujian Online</h4>
+                                <p class="award-single-list-text">Biznet Gio Cloud - 11 Juni 2024</p>
+                            </div>
+                            <a href="#" class="icon-btn">
+                                <i class="far fa-arrow-up-long rotate-right"></i>
+                            </a>
+                        </li>
+                        <li class="award-single-list">
+                            <div class="award-title-wrap">
+                                <h4 class="box-title ">Magang Software House</h4>
+                                <p class="award-single-list-text">PT Sekawan Media Informatika - Juli 2020 sd September 2020</p>
                             </div>
                             <a href="#" class="icon-btn">
                                 <i class="far fa-arrow-up-long rotate-right"></i>
