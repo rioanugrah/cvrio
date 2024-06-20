@@ -16,7 +16,7 @@ class ContactPersonController extends Controller
             'message' => $request->message,
         ];
 
-        $send_mail = Mail::to('rioanugrah@rioanugrah.my.id')
+        $send_mail = Mail::to('admin@rioanugrah.my.id')
         ->send(new \App\Mail\ContactPerson($datas));
 
         return response()->json([
